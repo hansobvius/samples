@@ -1,5 +1,5 @@
 import 'package:todo/app/entity/Todo.dart';
-import 'IDatabse.dart';
+import 'IDatabase.dart';
 
 class HiveDatabase implements IDatabase<Todo>{
 
