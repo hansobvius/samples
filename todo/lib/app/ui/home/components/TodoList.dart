@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo/todo.dart';
+import 'package:todo/app/entity/Todo.dart';
 
 class TodoList extends StatelessWidget {
   final List<Todo> todos;
@@ -43,7 +43,7 @@ class TodoList extends StatelessWidget {
                 ),
                 Text(
                   '${todo.created.hour}:${todo.created.minute}:'
-                  '${todo.created.second}',
+                      '${todo.created.second}',
                   style: TextStyle(fontSize: 16, color: Colors.grey[800]),
                 ),
               ],

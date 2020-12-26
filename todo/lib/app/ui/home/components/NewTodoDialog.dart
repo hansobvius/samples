@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:todo/todo.dart';
 import 'package:hive/hive.dart';
+import 'package:todo/app/entity/Todo.dart';
 
 class NewTodoDialog extends StatefulWidget {
+
+  final Todo todo;
+
+  NewTodoDialog({this.todo});
+
   @override
   _NewTodoDialogState createState() => _NewTodoDialogState();
 }

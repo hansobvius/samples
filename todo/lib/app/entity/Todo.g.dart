@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'todo.dart';
+part of 'Todo.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
@@ -12,8 +12,8 @@ class TodoAdapter extends TypeAdapter<Todo> {
 
   @override
   Todo read(BinaryReader reader) {
-    final int numOfFields = reader.readByte();
-    final Map<int, dynamic> fields = <int, dynamic>{
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Todo()
