@@ -2,11 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:todo/app/entity/Todo.dart';
+import 'package:todo/app/entity/todo/Todo.dart';
 import 'package:todo/app/ui/home/components/NewTodoDialog.dart';
-import 'package:todo/app/ui/home/components/TodoList.dart';
 
-class TodoMainList extends StatelessWidget {
+import 'TodoList.dart';
+
+class TodoMainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,13 +68,13 @@ class TodoMainList extends StatelessWidget {
         const SizedBox(height: 40),
         Expanded(
           child: ValueListenableBuilder<Box<Todo>>(
-            valueListenable: Hive.box<Todo>(todoKey).listenable(),
+            valueListenable: Hive.box<Todo>(hiveKey).listenable(),
             builder: (context, box, _) {
-              var todos = box.values.toList().cast<Todo>();
+              List<Todo> todo = box.values.toList().cast<Todo>();
               if (reversed) {
-                todos = todos.reversed.toList();
+                todo = todo.reversed.toList();
               }
-              return TodoList(todos);
+              return TodoList(todo);
             },
           ),
         ),

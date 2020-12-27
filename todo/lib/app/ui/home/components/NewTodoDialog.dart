@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:todo/app/entity/Todo.dart';
+import 'package:todo/app/entity/todo/Todo.dart';
 
 class NewTodoDialog extends StatefulWidget {
 
@@ -53,7 +53,7 @@ class _NewTodoDialogState extends State<NewTodoDialog> {
               var todo = Todo()
                 ..name = controller.text
                 ..created = DateTime.now();
-              Hive.box<Todo>(todoKey).add(todo);
+              Hive.box<Todo>(hiveKey).add(todo);
             }
             Navigator.of(context).pop();
           },

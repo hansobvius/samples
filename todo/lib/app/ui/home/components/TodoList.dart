@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:todo/app/entity/Todo.dart';
+import 'package:todo/app/entity/todo/Todo.dart';
+
 
 class TodoList extends StatelessWidget {
   final List<Todo> todos;
 
-  const TodoList(this.todos);
+  const TodoList(List<Todo> todo, {this.todos});
 
   @override
   Widget build(BuildContext context) {

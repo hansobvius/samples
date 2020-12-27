@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todo/app/entity/Todo.dart';
-import 'package:todo/app/ui/home/components/TodoMainList.dart';
+import 'file:///F:/thiag/FlutterProjects/HiveSampleForked/samples/todo/lib/app/entity/todo/Todo.dart';
+import 'package:todo/app/ui/home/components/TodoMainScreen.dart';
 import 'package:hive/hive.dart';
 
 class Home extends StatefulWidget{
@@ -19,7 +19,7 @@ class _HomeState extends State<Home>{
         child: FutureBuilder(
           future: Future.wait([
             Hive.openBox('settings'),
-            Hive.openBox<Todo>(todoKey),
+            Hive.openBox<Todo>(hiveKey),
           ]),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
@@ -31,7 +31,7 @@ class _HomeState extends State<Home>{
                   ),
                 );
               } else {
-                return TodoMainList();
+                return TodoMainScreen();
               }
             } else {
               return Scaffold(
