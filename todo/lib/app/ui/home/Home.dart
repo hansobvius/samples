@@ -19,7 +19,7 @@ class _HomeState extends State<Home>{
         child: FutureBuilder(
           future: Future.wait([
             Hive.openBox('settings'),
-            Hive.openBox<Todo>('todos'),
+            Hive.openBox<Todo>(todoKey),
           ]),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {

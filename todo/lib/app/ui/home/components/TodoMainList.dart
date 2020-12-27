@@ -67,7 +67,7 @@ class TodoMainList extends StatelessWidget {
         const SizedBox(height: 40),
         Expanded(
           child: ValueListenableBuilder<Box<Todo>>(
-            valueListenable: Hive.box<Todo>('todos').listenable(),
+            valueListenable: Hive.box<Todo>(todoKey).listenable(),
             builder: (context, box, _) {
               var todos = box.values.toList().cast<Todo>();
               if (reversed) {
