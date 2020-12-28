@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///F:/thiag/FlutterProjects/HiveSampleForked/samples/todo/lib/app/entity/todo/Todo.dart';
+import 'package:todo/app/entity/todo/Todo.dart';
 import 'package:todo/app/ui/home/components/TodoMainScreen.dart';
 import 'package:hive/hive.dart';
 

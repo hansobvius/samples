@@ -2,21 +2,29 @@ import 'package:hive/hive.dart';
 import 'package:todo/app/entity/todo/Todo.dart';
 import 'IDatabase.dart';
 
-class HiveDatabase extends IDatabase<Todo>{
+class HiveDatabase<T> extends IDatabase<T>{
+
+  Box _box;
+
+  HiveDatabase(T hiveEntity) : super(hiveEntity);
 
   @override
-  void add(int index, Todo obj, String key) {
-    Hive.box<Todo>(key).add(obj);
+  void add(T obj) {
+    // TODO: implement add
+    _box.put(key, obj);
   }
 
   @override
-  void delete(int index, List<Todo> objList) {
+  void delete(List<T> objList) {
     // TODO: implement delete
+    _box.delete(key);
   }
 
   @override
-  List<Todo> get(String key) {
+  List<T> get() {
     // TODO: implement get
+    var todos = _box.get(key);
+    return todos;
   }
 }
 

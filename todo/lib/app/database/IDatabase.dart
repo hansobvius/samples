@@ -3,19 +3,19 @@ import 'package:todo/app/entity/IEntity.dart';
 
 abstract class IDatabase<T>{
 
-  T hiveEntity;
+  T _hiveEntity;
 
-  String get _entityKey => (hiveEntity as IEntity).hiveKey;
+  String get _entityKey => (_hiveEntity as IEntity).hiveKey;
   String get key => _entityKey;
 
-  IDatabase({this.hiveEntity}){
+  IDatabase(T hiveEntity){
+    this._hiveEntity = hiveEntity;
     Hive.openBox<T>(_entityKey);
-    get(_entityKey);
   }
 
-  void add(int index, T obj, String key);
+  void add(T obj);
 
-  void delete(int index, List<T> objList);
+  void delete(List<T> objList);
 
-  List<T> get(String key);
+  List<T> get();
 }
