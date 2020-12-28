@@ -11,6 +11,20 @@ class Home extends StatefulWidget{
 
 class _HomeState extends State<Home>{
 
+  bool _isReversed;
+
+  @override
+  void initState(){
+    _isReversed = false;
+    super.initState();
+  }
+
+  void changeListOrder(){
+    setState(() {
+      _isReversed = !_isReversed;
+    });
+  }
+
   @override
   Widget build(BuildContext context){
     return Center(
