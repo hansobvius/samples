@@ -15,7 +15,7 @@ class HiveDatabase<T> extends IDatabase<T>{
   }
 
   @override
-  void delete(List<T> objList) {
+  void delete() {
     // TODO: implement delete
     _box.delete(key);
   }

@@ -15,7 +15,7 @@ abstract class IDatabase<T>{
 
   void add(T obj);
 
-  void delete(List<T> objList);
+  void delete();
 
   List<T> get();
 }
